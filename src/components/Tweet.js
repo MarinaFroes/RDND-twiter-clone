@@ -26,7 +26,7 @@ class Tweet extends Component {
     }
 
     const {
-      name, avatar, timestamp, text, hasLiked, likes, replies, id, parent
+      name, avatar, timestamp, text, hasLiked, likes, replies, parent
     } = tweet
 
     return (
