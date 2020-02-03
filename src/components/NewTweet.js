@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import { handleAddTweet } from '../actions/tweets'
 
 class NewTweet extends Component {
   state = {
-    text: ''
+    text: '',
+    toHome: false
   }
 
   // In this case, it's simpler to have a local state
@@ -27,12 +29,17 @@ class NewTweet extends Component {
     dispatch(handleAddTweet(text, id))
 
     this.setState(() => ({
-      text: ''
+      text: "",
+      toHome: id ? false : true
     }))
   }
 
   render() {
-    const { text } = this.state
+    const { text, toHome } = this.state
+
+    if (toHome === true) {
+      return <Redirect to="/" />
+    }
 
     const tweetLeft = 280 - text.length
 
