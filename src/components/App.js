@@ -24,7 +24,7 @@ class App extends Component {
             {this.props.loading === true ? null : (
               <div>
                 <Route path="/" exact component={Dashboard} />
-                <Route path="/tweet:id" component={TweetPage} />
+                <Route path="/tweet/:id" component={TweetPage} />
                 <Route path="/new" exact component={NewTweet} />
               </div>
             )}
