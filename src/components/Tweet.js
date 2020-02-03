@@ -14,6 +14,8 @@ class Tweet extends Component {
   }
 }
 
+// Id prop is being passed to the Tweet component
+// Because of this, the mapStateToProps function's second argument (ownProps) will be an object that has an id property with this value.
 function mapStateToProps({ authedUser, users, tweets }, { id }) {
   const tweet = tweets[id]
 
