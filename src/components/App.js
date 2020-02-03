@@ -12,11 +12,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Dashboard />
+        { this.props.loading === true ? null : <Dashboard /> }
       </div>
     )
   }
 }
 
+// Check if the application has finished loading the initial data before rendering the Dashboard
+function mapStateToProps({ authedUser }) {
+  return {
+    loading: authedUser === null
+  }
+}
 // Using the connect() function upgrades a component to a container. Containers can read state from the store and dispatch actions.
-export default connect()(App)
+export default connect(mapStateToProps)(App)
