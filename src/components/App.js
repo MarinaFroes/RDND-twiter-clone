@@ -17,4 +17,5 @@ class App extends Component {
   }
 }
 
+// Using the connect() function upgrades a component to a container. Containers can read state from the store and dispatch actions.
 export default connect()(App)
